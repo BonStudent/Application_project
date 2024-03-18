@@ -1,7 +1,9 @@
 <script setup>
-import Home from './components/Home.vue';
+import dashboard from './components/dashboard.vue';
 import Login from './components/Login.vue'
 import Signup from './components/Signup.vue'
+import firstpage from './components/firstpage.vue';
+import secondpage from './components/secondpage.vue';
 
 import './assets/index.css'
 
@@ -14,4 +16,4 @@ import './assets/index.css'
 </template>
 
 <style scoped>
-</style>
+</style>./components/dashboard.vue

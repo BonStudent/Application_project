@@ -1,5 +1,5 @@
 <template>
-  <div class="container max-w-7xl">
+  <div class="container max-w-8xl">
   <!-- Header -->
     <div>
       <qwe />
@@ -13,34 +13,28 @@
       </h2>
     </div> 
 
-    <!-- Charts for summary -->
+   <!-- Charts for summary  -->
       <div id="chart" class="chart" >
-        <Chart class="chart1"/>
+        <Pie class="chart1"/>
         <BarChart class="chart2"/>
+      </div> 
+
+    <!-- Table list -->
+      <div class="table">
+        <Tableview />
       </div>
   </div>
 </template> 
 
 <script setup>
-    import qwe from '../components/header.vue';
-    
-</script>
-
-<script>
-import Chart from '../components/charts/Pie.vue'
+import qwe from '../components/header.vue';
+import Pie from '../components/charts/Pie.vue'
 import BarChart from '../components/charts/bar.vue'
+import Tableview from '../components/table.vue'
 
-export default {
-  name: 'App',
-  components: 
-  { Chart ,
-   BarChart 
-}
-}
 </script>
 
 <style scoped>
-
   .text{
     display: flex;
     flex-direction: column; 
@@ -63,12 +57,13 @@ export default {
   }
   .chart{
     display: flex;
-    margin-top: 20%;
+    margin-bottom: 10%;
+    margin-left: 5%;
   }
   .chart1{
     width: 30%;
   }
   .chart2{
-    margin-left: 70px;
+    margin-left: 90px;
   }
-</style>./charts/Pie.vue
+</style>
