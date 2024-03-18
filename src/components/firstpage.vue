@@ -16,7 +16,7 @@
   export default {
     methods: {
       navigateToSecondPage() {
-        // Use router.push to navigate to '/newappcontent'
+        // Use router.push to navigate to '/secondpage'
         window.location.href = '/secondpage';
       }
     }

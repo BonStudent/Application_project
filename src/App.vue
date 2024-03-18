@@ -16,4 +16,4 @@ import './assets/index.css'
 </template>
 
 <style scoped>
-</style>./components/dashboard.vue
+</style>

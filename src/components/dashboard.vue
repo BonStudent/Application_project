@@ -14,9 +14,9 @@
     </div> 
 
    <!-- Charts for summary  -->
-      <div id="chart" class="chart" >
-        <Pie class="chart1"/>
-        <BarChart class="chart2"/>
+      <div class="chart" >
+        <Pie class="pie"/>
+        <BarChart class="bar"/>
       </div> 
 
     <!-- Table list -->
@@ -57,13 +57,29 @@ import Tableview from '../components/table.vue'
   }
   .chart{
     display: flex;
-    margin-bottom: 10%;
-    margin-left: 5%;
+    flex-direction: row;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0; 
+    margin-top: 13%;
+    margin-left: 10%;
   }
-  .chart1{
-    width: 30%;
+  .pie{
+    width: 20%;
   }
-  .chart2{
+  .bar{
     margin-left: 90px;
+  }
+  .table{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0; 
+    margin-top: 35%;
   }
 </style>
