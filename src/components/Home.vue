@@ -1,5 +1,5 @@
 <template>
-  <div class="container max-w-7xl">
+  <div class="container max-w-7xl" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
   <!-- Header -->
     <div>
       <qwe />
@@ -14,7 +14,7 @@
     </div> 
 
     <!-- Charts for summary -->
-      <div id="chart" class="chart" >
+      <div id="chart" class="chart">
         <Chart class="chart1"/>
         <BarChart class="chart2"/>
       </div>
@@ -45,7 +45,7 @@ export default {
     display: flex;
     flex-direction: column; 
     height: 50px; 
-    margin-top: 5%;
+    margin-top: 100px;
     position: fixed; 
     top: 0;
     left: 0;
@@ -64,11 +64,12 @@ export default {
   .chart{
     display: flex;
     margin-top: 20%;
+    flex-direction: row;
   }
   .chart1{
-    width: 30%;
+    width: 100%;
   }
   .chart2{
-    margin-left: 70px;
+    width: 100%;
   }
 </style>./charts/Pie.vue
