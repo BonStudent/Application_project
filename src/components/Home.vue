@@ -10,11 +10,11 @@
       <p class="text1">Financial or Technical Assistance Agreement</p>
       <h2 class="text2">
         SUMMARY
-      </h2>
+      </h2> 
     </div> 
 
     <!-- Charts for summary -->
-      <div id="chart" class="chart">
+      <div id="chart" class="chart" style="background-color: red;">
         <Chart class="chart1"/>
         <BarChart class="chart2"/>
       </div>
@@ -64,7 +64,7 @@ export default {
   .chart{
     display: flex;
     margin-top: 20%;
-    flex-direction: row;
+    flex-direction: row;  
   }
   .chart1{
     width: 100%;

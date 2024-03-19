@@ -1,6 +1,6 @@
 <template>
   <div style="display: flex; flex-direction: column;">
-  <div style="display: flex; flex-direction: row;">
+  <div style="display: flex; flex-direction: row;margin-bottom: 5%;">
         <div>
         <h1>Province1</h1>
         <Bar
