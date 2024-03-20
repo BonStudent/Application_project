@@ -29,26 +29,62 @@
                     </div>
                 </div>
                 <div>
-                    <button type="submit" class=" flex w-full justify-center rounded-md text-lime-100 bg-lime-800 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-lime-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500">Sign in</button>
+                    <button @click.prevent="login" type="submit" class=" flex w-full justify-center rounded-md text-lime-100 bg-lime-800 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-lime-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500">Sign in</button>
                 </div>
              </form>
             </div>
         </div>
         </div>
     </div>
+    <div v-if="accountIdz != ''">
+    <p>Account ID: {{ accountIdz }}</p>
+    <button  @click.prevent="logout">logout</button>
+    </div>
 </div>
     </template>
     
     <script>
-     import { computed, ref } from "vue";
+     
+    
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+        const accountIdz = localStorage.getItem('accountId');
 
-        const email = ref("");
-        const hidePassword = ref(true);
-        const password = ref("");
-
-        const passwordFieldIcon = computed(() => hidePassword.value ? "fa-eye" : "fa-eye-slash");
-        const passwordFieldType = computed(() => hidePassword.value ? "password" : "text");
+        const login = () => {
+            console.log('hakdog')
+        }
     </script>
+
+<script setup>
+    import { computed, ref } from "vue";
+    import { useAuthStore } from '../store/auth';
+    const authStore = useAuthStore();
+
+    const accountIdz = localStorage.getItem('accountId');
+
+    const email = ref("");
+    const hidePassword = ref(true);
+    const password = ref("");
+    const passwordFieldIcon = computed(() => hidePassword.value ? "fa-eye" : "fa-eye-slash");
+    const passwordFieldType = computed(() => hidePassword.value ? "password" : "text");
+
+    const login = () => {
+        console.log('hakdog');
+        console.log(accountIdz)
+        authStore.login("yawaka");
+        localStorage.setItem('isLoggedIn', true);
+        localStorage.setItem('accountId', "yawaka");
+        window.location.reload();
+
+}
+
+const logout = () => {
+   authStore.logout(); // Call the logout method from your authentication store
+   localStorage.setItem('isLoggedIn', 'false'); // Update the isLoggedIn key in localStorage
+   localStorage.setItem('accountId', '');
+   window.location.reload();
+//    localStorage.removeItem('accountId'); // Remove any other relevant data from localStorage
+ }
+</script>
     
     <style scoped>
     
