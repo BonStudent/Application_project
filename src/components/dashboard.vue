@@ -1,10 +1,16 @@
 <template>
-  <div class="container max-w-8xl">
+      
+  <div class="">
   <!-- Header -->
-    <div>
+  <div>
       <qwe />
     </div>
 
+
+
+    <div v-if="addDetail">
+      <appdet></appdet>
+    </div>
     <!-- Text -->
     <div class="text">
       <p class="text1">Financial or Technical Assistance Agreement</p>
@@ -27,10 +33,24 @@
 </template> 
 
 <script setup>
+import appdet from '../components/appllicationdetailes.vue'
 import qwe from '../components/header.vue';
 import Pie from '../components/charts/Pie.vue'
 import BarChart from '../components/charts/bar.vue'
 import Tableview from '../components/table.vue'
+
+
+
+</script>
+<script>
+import { ref } from 'vue';
+
+    const addDetail = ref(false) 
+    const detailToggle = () => {
+      addDetail.value = true
+      };
+    
+    export { addDetail , detailToggle}
 
 </script>
 
@@ -46,6 +66,7 @@ import Tableview from '../components/table.vue'
     right: 0;
     align-items: center ;
     font-size:20px;
+    
   }
   .text1{
     align-items: center ;
