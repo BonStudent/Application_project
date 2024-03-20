@@ -40,14 +40,22 @@
             
             <div class="appdetails4">
                 <label>Category</label>
-                <input class="inputall"/>
+                <select class="inputall " v-model="selectedCategory">
+                    <option value="individual">Individual</option>
+                    <option value="corporation">Corporation</option>
+                    <option value="cooperative">Cooperative</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <!-- Conditional input field for 'Other' category -->
+                <input v-if="selectedCategory === 'other'" class="inputall cate" v-model="otherCategory" placeholder="Enter other category"/>
 
                 <label>Authorized Representative</label>
-                <input class="inputall"/>
+                <input class="inputall"/>   
 
                 <label>Contact Number</label>
-                <input class="inputall"/>
-
+                <input class="inputall" v-model="contactnum" @input="formatContactNum" maxlength="11" required/>
+                
                 <label>Email Address</label>
                 <input class="inputall"/>
 
@@ -79,10 +87,20 @@ export default{
       return {
         
         details: [],
+        contactnum: '',
+        selectedCategory: 'individual',
+        otherCategory: '',
         date: this.getCurrentDate(),
         addDetail: true
       };
     },
+    watch: {
+    selectedCategory(newValue) {
+      if (newValue !== 'other') {
+        this.otherCategory = '';
+      }
+    }
+  },
     methods: {
         Exit() {
             addDetail.value = false
@@ -100,6 +118,21 @@ export default{
       }
       return `${yyyy}-${mm}-${dd}`;
     },
+    
+
+    formatContactNum() {
+      // Remove non-numeric characters
+      this.contactnum = this.contactnum.replace(/\D/g, '');
+
+      // Ensure the input starts with "09"
+      if (!/^09/.test(this.contactnum)) {
+        this.contactnum = '09';
+      }
+
+      // Limit the input to 11 characters
+      this.contactnum = this.contactnum.slice(0, 11);
+    }
+
     }
 }
 
@@ -189,7 +222,13 @@ export default{
     background-color: gray;
     color: white;
     margin-left: 1px;
+    padding-left: 4px;
     
+}
+
+.cate::placeholder
+{
+    color:rgb(252, 247, 247)
 }
 
 @media (max-width: 768px) {
