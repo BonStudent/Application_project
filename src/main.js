@@ -1,15 +1,14 @@
 import { createApp } from 'vue';
-import { createPinia } from 'pinia';
+import { pinia } from './store'
 import router from './router';
-
+import App from './App.vue';
 
 
 import './axios'
-import App from './App.vue';
 
-const pinia = createPinia();
-const app = createApp(App);
-app.use(pinia);
-app.use(router);
 
-app.mount('#app');
+
+
+/* eslint-disable vue/injection-key */
+createApp(App).use(router).use(pinia).mount('#app')
+/* eslint-enable vue/injection-key */
