@@ -1,13 +1,18 @@
 import { createRouter, createWebHistory } from "vue-router";
 import firstpage from "../components/firstpage.vue";
+import login from "../components/Login.vue"
+import signup from "../components/Signup.vue"
+import secondpage from "../components/secondpage.vue"
+import dashboard from "../components/dashboard.vue"
+import table from "../components/table.vue"
 
 const routes = [
-    { path: "/", component: firstpage },
-    { path: "/login", component: () => import("../components/Login.vue") },
-    { path: "/signup", component: () => import("../components/Signup.vue") },
-    { path: "/secondpage", component: () => import("../components/secondpage.vue") },
-    { path: "/dashboard", component: () => import("../components/dashboard.vue") },
-    { path: "/table", component: () => import("../components/table.vue") },
+    { path: "/login", component: login },
+    { path: "/first", component: firstpage },
+    { path: "/signup", component:  signup},
+    { path: "/secondpage", component:  secondpage},
+    { path: "/dashboard", component:  dashboard},
+    { path: "/table", component:  table},
     
 ];
 

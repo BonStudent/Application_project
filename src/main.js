@@ -8,7 +8,6 @@ import './axios'
 
 
 
-
 /* eslint-disable vue/injection-key */
 createApp(App).use(router).use(pinia).mount('#app')
 /* eslint-enable vue/injection-key */

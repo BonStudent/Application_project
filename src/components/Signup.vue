@@ -18,7 +18,7 @@
                 </div>
                 
                 <div class="third">
-                    <button class="buttonlogin">Register</button>
+                    <button class="buttonlogin" @click="redirectToLogin">Register</button>
                 </div>
             </div>
             </div>
@@ -31,6 +31,13 @@
 import taas from './header.vue'
 import mgb from '../assets/mgb.png'
 
+</script>
+<script>
+const redirectToLogin = () => {
+        window.location.href = "/";
+    }
+
+   const isLoggedIn = localStorage.getItem('isLoggedIn');
 
 </script>
 

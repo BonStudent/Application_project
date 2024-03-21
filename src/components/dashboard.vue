@@ -31,7 +31,15 @@ import qwe from '../components/header.vue';
 import Pie from '../components/charts/Pie.vue'
 import BarChart from '../components/charts/bar.vue'
 import Tableview from '../components/table.vue'
+import axios from 'axios';
 
+import {ref , onMounted } from 'vue'
+
+const user =ref();
+onMounted(async() => {
+  const data = await axios.get('http://127.0.0.1:8000/get_accounts/')
+  user.value = data;
+})
 </script>
 
 <style scoped>
