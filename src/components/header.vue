@@ -30,7 +30,7 @@
     justify-content: space-between;
     align-items: center ;
     border-bottom: 1px solid black;
-    box-shadow: 0px 0px 30px 0px black;
+    box-shadow: 0px 0px 10px 0px black;
  }
  
  .imagediv1{

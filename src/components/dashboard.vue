@@ -1,18 +1,21 @@
 <template>
-  <div class="container max-w-8xl">
+      
+  <div class="">
   <!-- Header -->
     <div>
       <qwe />
     </div>
 
+    <div v-if="addDetail">
+      <appdet></appdet>
+    </div>
     <!-- Text -->
-    <div class="text">
+    <div class="tetz">
       <p class="text1">Financial or Technical Assistance Agreement</p>
       <h2 class="text2">
         SUMMARY
       </h2>
     </div> 
-
    <!-- Charts for summary  -->
       <div class="chart" >
         <Pie class="pie"/>
@@ -27,6 +30,7 @@
 </template> 
 
 <script setup>
+import appdet from '../components/appllicationdetailes.vue'
 import qwe from '../components/header.vue';
 import Pie from '../components/charts/Pie.vue'
 import BarChart from '../components/charts/bar.vue'
@@ -40,10 +44,23 @@ onMounted(async() => {
   const data = await axios.get('http://127.0.0.1:8000/get_accounts/')
   user.value = data;
 })
+
+
+</script>
+<script>
+import { ref } from 'vue';
+
+    const addDetail = ref(false) 
+    const detailToggle = () => {
+      addDetail.value = true
+      };
+    
+    export { addDetail , detailToggle}
+
 </script>
 
 <style scoped>
-  .text{
+  .textz{
     display: flex;
     flex-direction: column; 
     height: 50px; 
@@ -54,6 +71,7 @@ onMounted(async() => {
     right: 0;
     align-items: center ;
     font-size:20px;
+    
   }
   .text1{
     align-items: center ;

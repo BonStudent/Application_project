@@ -7,8 +7,8 @@ import dashboard from "../components/dashboard.vue"
 import table from "../components/table.vue"
 
 const routes = [
-    { path: "/login", component: login },
-    { path: "/first", component: firstpage },
+    { path: "/", component: login },
+    { path: "/firstpage", component: firstpage },
     { path: "/signup", component:  signup},
     { path: "/secondpage", component:  secondpage},
     { path: "/dashboard", component:  dashboard},

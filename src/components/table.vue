@@ -1,7 +1,7 @@
 <template>
    <div class="tablemain">
     <div class="flex lg:justify-end mb-5 ">
-          <button class="button1" @click="navigateToSecondPage">Add Application</button>
+          <button class="button1" @click="navigateTomodal">Add Application</button>
       </div> 
      <div class="scrollable-table">
       <table class="w-full text-sm text-left text-black-300 dark:text-gray-400 shadow-xl">
@@ -45,12 +45,14 @@
   
   <script>
   import axios from 'axios';
-  
+  import { addDetail,detailToggle } from './dashboard.vue';
+
   export default {
     name: 'typeofapp',
     data() {
       return {
-        details: []
+        details: [],
+        addDetail: false
       };
     },
     mounted() {
@@ -65,14 +67,16 @@
           console.error('Error fetching details:', error);
         }
       },
-      navigateToSecondPage() {
-        // Define your navigation logic here
+      navigateTomodal() {
+        addDetail.value = true// Define your navigation logic here
       },
       viewDetail(detail) {
         // Define your detail view logic here
       }
     }
   };
+
+
   </script>
   
   <style>
@@ -92,7 +96,7 @@
   .tablemain{
     flex: auto;
     flex-direction: column;
-    margin-left: 70px; 
+    margin-left: 20px; 
     border-collapse: collapse;
     width: 100%;
   }

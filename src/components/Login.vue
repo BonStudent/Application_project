@@ -11,14 +11,39 @@
                         <p style="font-size: 15px;">Login to access the MGB-X </p>
                         <p style="font-size: 15px;">MTTS System:</p>
                     </div>
-                    <form @submit.prevent="handleLogin">
+                    <form >
                         <div class="inputfield">
                             <input v-model="form.username" id="username" name="username" type="username" autocomplete="username" placeholder="   Username" class="drop-shadow-lg py-2 mx-10 mb-4 w-70 rounded-md" />
                             <input v-model="form.password"id="password" name="password" type="password" autocomplete="password" placeholder="   Password" class="drop-shadow-lg py-2 mx-10 mb-4 w-70 rounded-md" />
+                        
+                        <div v-if="isValid" class="error" style="display: flex;flex-direction: column; margin-left: 45px;">
+                                <a class="errormsg1" style="color: red;">
+                                    Warning Alert!!
+                                </a>
+                                <a class="errormsg">
+                                    Please Fill out the Text Fields
+                                </a>
                         </div>
+                        <div v-if="isUsername" class="wronge" style="display: flex;flex-direction: column; margin-left: 45px;">
+                                <a class="wronge1"  style="color: red;">
+                                    Error Alert!!
+                                </a>
+                                <a class="wronge2">
+                                    {{ error }}
+                                </a>
+                        </div>
+                        <div v-else-if="pleaseWait" class="logincorrect" style="display: flex;flex-direction: column; margin-left: 45px;">
+                                <a class="logincorrect1">
+                                    Login!!
+                                </a>
+                                <a class="logincorrect2">
+                                    Please wait for a moment....
+                                </a>
+                        </div>
+                      </div>
                     </form>
                     <div class="third">
-                        <button class="buttonlogin" @click="handleLogin">Login</button>
+                        <button class="buttonlogin" :disabled="submitting" @click="handleLogin">Login</button>
                         <p style="color: blue; text-decoration: underline; cursor: pointer; margin-top: 10px;" >Forgot Password?</p>
                         <p style="color:black; cursor: pointer;" @click="redirectToUrl" >Don't have an account yet?</p>
                     </div>
@@ -36,6 +61,13 @@
     import { useRouter } from 'vue-router';
 
 
+    const isValid = ref(false);
+    const isUsername = ref(false);
+    const pleaseWait = ref(false);
+    const submitting = ref (false);
+    const error = ref('');
+
+
     const router = useRouter();
     const form = ref({
         username: '',
@@ -43,22 +75,109 @@
     });
 
     const handleLogin = async () => {
-        try {
-            const response = await axios.get('http://127.0.0.1:8000/get_accounts/', {
-                username: form.value.username,
-                password: form.value.password
-            });
+        const passvalid = /^(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9-]{7,}$/;
+        // const account = accounts.value.find(acc => acc.username === username.value && acc.password === password);
 
-            // If the request is successful, you can handle the response here
-            console.log(response.data); // Log the response data
-            
-            // Optionally, redirect to another page after successful login
-            router.push("/dashboard");
-        } catch (error) {
-            // If there's an error, you can handle it here
-            console.error('Error:', error);
-        }
-    }
+            const response = await axios.get('http://127.0.0.1:8000/get_accounts/');
+           
+
+            const account = response.data.find(acc => acc.username === form.value.username &&  acc.password  === form.value.password);
+
+            if (form.value.username === '' && form.value.password === ''){
+                isValid.value = true;
+                setTimeout(() => {
+                    isValid.value = false;
+                }, 2000);
+            }else if (form.value.username === ''){
+                isUsername.value = true;
+                error.value = 'Input Username'
+                setTimeout(() => {
+                    isUsername.value = false;
+                }, 2000);
+            }else if (form.value.password=== ''){
+                error.value = 'Input Password'
+                isUsername.value = true;
+                setTimeout(() => {
+                    isUsername.value = false;
+                }, 2000);
+            }else if (!account){
+                isUsername.value =true
+                error.value = 'Account not Found'
+                setTimeout(() => {
+                    isUsername.value = false;
+                }, 2000);
+            }else if (account.password !== form.value.password){
+                error.value = 'Wrong Pasword'
+                isUsername.value = true;
+                setTimeout(() => {
+                    isUsername.value = false;
+                }, 2000);
+            }else{
+                pleaseWait.value = true;
+                
+                    setTimeout(() => {
+                        router.push("/firstpage") // Set submitting back to false after timeout
+                        }, 2000);;
+    }  
+}
+        
+
+
+            // if (form.value.username === '' && form.value.password === '') {
+            //     isValid.value = true;
+            //     setTimeout(() => {
+            //         isValid.value = false;
+            //     }, 3000);
+            // } else if (form.value.username === '') {
+            //     error.value = 'Input Username';
+            //     isValid.value = true;
+            //     setTimeout(() => {
+            //         isValid.value = false;
+            //     }, 3000);
+            // } else if (emailPattern.test(form.value.username) === false) {
+            //     error.value = 'Not Valid Username';
+            //     isUsername.value = true;
+            //     setTimeout(() => {
+            //         isUsername.value = false;
+            //     }, 3000);
+            // } else if (!account) {
+            //     error.value = 'Username not Found';
+            //     isUsername.value = true;
+            //     setTimeout(() => {
+            //         isUsername.value = false;
+            //     }, 3000);
+            // } else if (form.value.password === '') {
+            //     isValid.value = true;
+            //     setTimeout(() => {
+            //         isValid.value = false;
+            //     }, 3000);
+            // } else if (passvalid.test(form.value.password) === false) {
+            //     error.value = 'Invalid Password Format';
+            //     isUsername.value = true;
+            //     setTimeout(() => {
+            //         isUsername.value = false;
+            //     }, 3000);
+            // } else if (account.password !== form.value.password) {
+            //     error.value = 'Wrong Password';
+            //     isUsername.value = true;
+            //     setTimeout(() => {
+            //         isUsername.value = false;
+            //     }, 3000);
+            // }else{
+                // form.value.username = '';
+                // form.value.password = '';
+                // router.push("/firstpage");
+                // submitting.value = true;
+                // pleaseWait.value = true;
+
+            //     setTimeout(() => {
+            //    window.location.reload();
+            //    submitting.value = false; // Set submitting back to false after timeout
+            //    }, 2000);;
+            // }
+        
+
+
 </script>
     
     <style scoped>
@@ -69,13 +188,13 @@
             
         }
         .panel1{
-            height: 400px;
+            height: auto;
             width: 600px;
             display: flex;
             flex-direction: row;
             justify-content: center;
             align-items: center;
-            
+
         }
         .inputfield{
             display: flex;
@@ -87,7 +206,7 @@
             border-bottom-right-radius: 10px;
             background-color: #fcf1ed;
             margin-left: -70px;
-            height: 100%;
+            height: 400px;
             
         }
         .img123{

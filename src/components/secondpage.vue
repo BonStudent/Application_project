@@ -2,31 +2,31 @@
     <div class="new-app-content">
       <h1>New Applications</h1>
       <div class="button-container">
-        <button @click="navigateToDashboard()" class="button">
+        <button @click="navigateToDashboard()" class="button1">
           Financial or Technical Assistance Agreement
         </button>
-        <button @click="navigateToDashboard()" class="button">
+        <button  class="button1">
           Mineral Production Sharing Agreement
         </button>
-        <button @click="navigateToDashboard()" class="button">
+        <button  class="button1">
           Exploration Permit
         </button>
-        <button @click="navigateToDashboard()" class="button">
+        <button  class="button1">
           Mineral Processing Permit
         </button>
-        <button @click="navigateToDashboard()" class="button">
+        <button  class="button1">
           Industrial Sand and Gravel Permit
         </button>
-        <button @click="navigateToDashboard()" class="button">
+        <button  class="button1">
           Ore Transport Permit
         </button>
-        <button @click="navigateToDashboard()" class="button">
+        <button  class="button1">
           Declaration of Minahang Bayan
         </button>
-        <button @click="navigateToDashboard()" class="button">
+        <button  class="button1">
           Small-Scale Mining Contract
         </button>
-        <button @click="navigateToDashboard()" class="button">
+        <button  class="button1">
           Mineral Processor’s License
         </button>
       </div>
@@ -63,10 +63,11 @@
     align-items: center; /* Align buttons horizontally */
   }
   
-  .button {
+  .button1 {
     padding: 20px;
     margin: 0.5rem;
     width: 300px; /* Fixed width for all buttons */
+    height: auto;
     font-size: 1rem;
     border-radius: 5px;
     border: none;
