@@ -29,6 +29,9 @@
         <button @click="navigateToDashboard()" class="button">
           Mineral Processor’s License
         </button>
+        <button @click="navigateToDashboard()" class="button">
+          Accreditation as Mineral Trader, Retailer, and Dealer
+        </button>
       </div>
     </div>
   </template>

@@ -225,7 +225,9 @@ export default{
     padding-left: 4px;
     
 }
-
+.cate{
+margin-top: 2px
+}
 .cate::placeholder
 {
     color:rgb(252, 247, 247)
