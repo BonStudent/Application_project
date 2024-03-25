@@ -8,6 +8,7 @@ const routes = [
     { path: "/secondpage", component: () => import("../components/secondpage.vue") },
     { path: "/dashboard", component: () => import("../components/dashboard.vue") },
     { path: "/table", component: () => import("../components/table.vue") },
+    { path: "/require_amtrd", component: () => import("../components/require_amtrd.vue") },
     
 ];
 
