@@ -9,11 +9,11 @@ import table from "../components/table.vue"
 const routes = [
     { path: "/", component: login },
     { path: "/firstpage", component: firstpage },
-    { path: "/signup", component:  signup},
-    { path: "/secondpage", component:  secondpage},
-    { path: "/dashboard", component:  dashboard},
-    { path: "/table", component:  table},
-    
+    { path: "/signup", component: signup },
+    { path: "/secondpage", component: secondpage },
+    { path: "/dashboard", component: dashboard },
+    { path: "/table", component: table },
+
 ];
 
 const router = createRouter({

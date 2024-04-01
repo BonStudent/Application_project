@@ -1,5 +1,5 @@
 <template>
-  <div class= mt-4 >
+  <div class="piechart">
       <Pie
        id="my-chart-id" 
       :options="chartOptions" 
@@ -19,7 +19,7 @@ export default {
   data() {
       return {
           chartData: {
-              labels: ['Province1', 'Province2', 'Province3', 'Province4','Province5','Province6','Province7'],
+              labels: ['Bukidnon', 'Misamis Oriental', 'Misamis Occidental', 'Lanao del Norte','Camiguin','Cagayan de Oro City','Iligan City'],
               datasets: [
                   {
                       backgroundColor: ['#41B883', '#E46651', '#00D800', '#DD1B16', '#00D8FF', '#DD1B16', '#00D800'],
@@ -36,4 +36,8 @@ export default {
 </script>
 
 <style scoped>
+.piechart{
+    display: flex;
+    flex-wrap: wrap;
+}
 </style>
