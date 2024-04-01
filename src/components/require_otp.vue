@@ -1,10 +1,10 @@
 <template>
   <div class="requirements">
-    <h2>MANDATORY REQUIREMENTS</h2>
+    <h2>MANDATORY REQUIREMENTS (Will send the requirements)</h2>
 
     <!-- Table 1 -->
     <table class="table1">
-      
+      <caption>Upload Requirements (PDF, Word, or any file)</caption>
       <thead>
         <tr>
           <th>Requirement</th>

@@ -9,7 +9,17 @@ const routes = [
     { path: "/dashboard", component: () => import("../components/dashboard.vue") },
     { path: "/table", component: () => import("../components/table.vue") },
     { path: "/require_amtrd", component: () => import("../components/require_amtrd.vue") },
-    
+    { path: "/require_ep", component: () => import("../components/require_ep.vue") },
+    { path: "/require_ftaa", component: () => import("../components/require_ftaa.vue") },
+    { path: "/require_isag", component: () => import("../components/require_isag.vue") },
+    { path: "/require_minahan", component: () => import("../components/require_minahan.vue") },
+    { path: "/require_mpl", component: () => import("../components/require_mpl.vue") },
+    { path: "/require_mpp", component: () => import("../components/require_mpp.vue") },
+    { path: "/require_mpsa", component: () => import("../components/require_mpsa.vue") },
+    { path: "/require_otp", component: () => import("../components/require_otp.vue") },
+    { path: "/require_ssmc", component: () => import("../components/require_ssmc.vue") },
+
+
 ];
 
 const router = createRouter({

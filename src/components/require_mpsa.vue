@@ -1,4 +1,5 @@
 <template>
+  <div style="height: auto;">
   <div class="requirements">
     <h2>MANDATORY REQUIREMENTS</h2>
 
@@ -50,6 +51,7 @@
       </tbody>
     </table>
   </div>
+</div>
 </template>
 
 <script>
