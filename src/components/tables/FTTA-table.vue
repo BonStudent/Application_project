@@ -46,7 +46,7 @@
 <script>
 import axios from 'axios';
 import { ref } from 'vue';
-import { addDetail, detailToggle, viewDetail, detail_id } from './dashboard.vue';
+import { addDetail, detailToggle, viewDetail, detail_id } from '../dashboards/FTAA-dashboard.vue';
 
 export default {
   name: 'typeofapp',

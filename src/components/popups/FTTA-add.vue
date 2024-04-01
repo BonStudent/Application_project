@@ -45,7 +45,7 @@
         </div>
 
         <div class="appdetailsbutton">
-          <button class="butons">Next</button>
+          <button class="butons" @click="navigateToMandatoryReq()">Next</button>
         </div>
       </div>
 
@@ -59,7 +59,7 @@
 </script>
 
 <script>
-import { addDetail } from './dashboard.vue';
+import { addDetail } from '../dashboards/FTAA-dashboard.vue';
 
 
 export default {
@@ -81,6 +81,10 @@ export default {
     }
   },
   methods: {
+    navigateToMandatoryReq() {
+      // Use router.push to navigate to '/newappcontent'
+      window.location.href = '/ReqFTTA';
+    },
     Exit() {
       addDetail.value = false
     },

@@ -2,13 +2,13 @@
   <div class="new-app-content">
     <h1>New Applications</h1>
     <div class="button-container">
-      <button @click="navigateToDashboard()" class="button1">
+      <button @click="navigateToFTTAdashboard()" class="button1">
         Financial or Technical Assistance Agreement
       </button>
       <button class="button1">
         Mineral Production Sharing Agreement
       </button>
-      <button class="button1">
+      <button @click="navigateToEPdashboard()" class="button1" >
         Exploration Permit
       </button>
       <button class="button1">
@@ -34,15 +34,19 @@
 </template>
 
 <script>
-import dashboard from '../components/dashboard.vue'
+import router from '../router/index';
 
 export default {
 
   methods: {
-    navigateToDashboard() {
+    navigateToFTTAdashboard() {
       // Use router.push to navigate to '/newappcontent'
-      window.location.href = '/dashboard';
-    }
+      router.push('/fttadashboard');
+    },
+    navigateToEPdashboard() {
+      // Use router.push to navigate to '/newappcontent'
+     router.push('/EPdashboard');
+    },
   }
 };
 </script>

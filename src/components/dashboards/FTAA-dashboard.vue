@@ -35,12 +35,12 @@
 </template>
 
 <script setup>
-import appdet from '../components/appllicationdetailes.vue'
-import viewdetail from '../components/details.vue'
-import qwe from '../components/header.vue';
-import Pie from '../components/charts/Pie.vue'
-import BarChart from '../components/charts/bar.vue'
-import Tableview from '../components/table.vue'
+import appdet from '../popups/FTTA-add.vue'
+import viewdetail from '../popups/FTTA-details.vue'
+import qwe from '../header.vue';
+import Pie from '../charts/Pie.vue'
+import BarChart from '../charts/bar.vue'
+import Tableview from '../tables/FTTA-table.vue'
 import axios from 'axios';
 
 import { ref, onMounted } from 'vue'
@@ -126,4 +126,6 @@ export { addDetail, detailToggle, viewDetail, viewToggle, detail_id }
   right: 0;
   margin-top: 35%;
 }
+
+
 </style>

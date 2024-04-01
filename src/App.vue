@@ -1,5 +1,5 @@
 <script setup>
-import dashboard from './components/dashboard.vue';
+import dashboard from './components/dashboards/FTAA-dashboard.vue';
 import Login from './components/Login.vue'
 import Signup from './components/Signup.vue'
 import firstpage from './components/firstpage.vue';

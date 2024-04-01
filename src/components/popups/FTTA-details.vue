@@ -39,10 +39,10 @@
 </template>
 
 <script>
-import { viewDetail } from './dashboard.vue';
+import { viewDetail } from '../dashboards/FTAA-dashboard.vue';
 import axios from 'axios';
 
-export default {
+export default { 
     props: {
         detail_id: String,
     },
