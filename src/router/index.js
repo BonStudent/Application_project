@@ -8,6 +8,7 @@ import FTTAtable from "../components/tables/FTTA-table.vue"
 import ReqFTTA from "../components/requirements/FTTAmandatoryReq.vue"
 import ReqEP from "../components/requirements/EPmandatoryReq.vue"
 import epdashboard from "../components/dashboards/EP-dasboard.vue"
+import dropdown from "../components/multiple-upload.vue"
 
 const routes = [
     { path: "/", component: login },
@@ -19,7 +20,7 @@ const routes = [
     { path: "/ReqFTTA", component: ReqFTTA },
     { path: "/EPdashboard", component: epdashboard },
     { path: "/ReqEP", component: ReqEP },
-
+    { path: "/dropdown", component: dropdown },
 ];
 
 const router = createRouter({

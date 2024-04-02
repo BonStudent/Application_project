@@ -22,7 +22,7 @@
   
           <tbody>
             <tr v-for="(detail, index) in details" :key="index">
-              <td>{{ detail.id }}</td>
+              <!-- <td>{{ detail.id }}</td>
               <td>{{ detail.status }}</td>
               <td>{{ detail.tenement_name }}</td>
               <td>{{ detail.area_hectares }}</td>
@@ -30,7 +30,16 @@
               <td>{{ detail.barangay }}</td>
               <td>{{ detail.city }}</td>
               <td>{{ detail.province }}</td>
-              <td>{{ detail.commodity }}</td>
+              <td>{{ detail.commodity }}</td> -->
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
               <td>
                 <button class="text-red-500" @click="navigateTomodalView(detail.id)">
                   View

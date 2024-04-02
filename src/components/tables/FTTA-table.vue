@@ -71,7 +71,6 @@ export default {
       }
     },
     navigateTomodal() {
-
       addDetail.value = true// Define your navigation logic here
     },
     navigateTomodalView(id) {
