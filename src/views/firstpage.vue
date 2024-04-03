@@ -1,5 +1,8 @@
 <template>
   <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <div class="flex justify-center items-center h-screen">
+      <taas />
+    </div>
     <div class="conta">
       <div class="button-container">
         <button class="button ease-in-out duration-300 " @click="navigateToSecondPage">NEW APPLICATIONS</button>
@@ -11,8 +14,14 @@
   </div>
 </template>
 
+<script setup>
+import taas from '../components/header.vue'
+
+</script>
+
 <script>
-import secondpage from '../components/secondpage.vue'
+import taas from '../components/header.vue'
+import secondpage from '../views/secondpage.vue'
 
 export default {
   methods: {
@@ -60,10 +69,17 @@ export default {
   width: 1000px;
   height: 100px;
   border: none;
-  background-color: #42b983;
-  color: white;
+  background-color: #e0b983;
+  color: black;
   cursor: pointer;
   font-size: 25px;
   flex: 1 2 8rem;
+  cursor: pointer;
+ 
+}
+
+.button:hover{
+  background-color: #e7d1b1;
+  transition: 0.3s;
 }
 </style>

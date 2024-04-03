@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import { viewDetail } from '../dashboards/FTAA-dashboard.vue';
+import { viewDetail } from '/Users/PC8/Application_project/src/views/dashboards/FTAA-dashboard.vue';
 import axios from 'axios';
 
 export default { 
@@ -94,7 +94,7 @@ export default {
     margin-bottom: 10px;
 }
 .appdetails {
-  background-color: #a9dbc5;
+  background-color: #ffd498;
   display: flex;
   flex-direction: column;
   border-radius: 25px;

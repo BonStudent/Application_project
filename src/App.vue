@@ -1,9 +1,9 @@
 <script setup>
-import dashboard from './components/dashboards/FTAA-dashboard.vue';
-import Login from './components/Login.vue'
-import Signup from './components/Signup.vue'
-import firstpage from './components/firstpage.vue';
-import secondpage from './components/secondpage.vue';
+import dashboard from './views/dashboards/FTAA-dashboard.vue';
+import Login from './views/Login.vue'
+import Signup from './views/Signup.vue'
+import firstpage from './views/firstpage.vue';
+import secondpage from './views/secondpage.vue';
 
 import './assets/index.css'
 

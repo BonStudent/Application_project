@@ -327,9 +327,14 @@
     </div>
   </div>
 </template>
+
+
 <script setup>
-import upload from '../multiple-upload.vue'
+import upload from '/Users/PC8/Application_project/src/components/multiple-upload.vue'
+import headd from '/Users/PC8/Application_project/src/components/header.vue'
 </script>
+
+
 <script>
 export default {
   methods: {
@@ -357,10 +362,11 @@ export default {
   justify-content: center;
   font-size: 20px;
   font-weight: 500;
+  margin-top: 10px;
 }
 
 .requirements {
-  margin-top: 20px;
+  margin-top: 10px;
   text-align: center;
 }
 
@@ -385,7 +391,6 @@ export default {
 
 table {
   width: 100%;
-  border-collapse: collapse;
   margin-bottom: 20px;
   text-align: left;
 }
@@ -397,7 +402,7 @@ td {
 }
 
 th {
-  background-color: #f2f2f2;
+  background-color: #e0b983;
 }
 
 caption {

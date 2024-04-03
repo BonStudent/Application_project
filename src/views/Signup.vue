@@ -31,7 +31,7 @@
 </template>
 
 <script setup>
-import taas from './header.vue'
+import taas from '../components/header.vue'
 import mgb from '../assets/mgb.png'
 
 </script>

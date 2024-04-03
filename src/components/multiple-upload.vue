@@ -92,14 +92,14 @@ export default {
     font-weight: 400;
     padding: 8px 13px;
     width: 100%;
-    background-color: #a56d05;
+    background-color: #e0b983;
 }
 
 .card .drag-area {
     height: 90px;
     border-radius: 5px;
-    border: 2px dashed #a56d05;
-    background: #ffdfdf;
+    border: 2px dashed #7e694d;
+    background: #e0b983;
     color: #a56d05;
     display: flex;
     justify-content: center;

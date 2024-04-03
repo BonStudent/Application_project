@@ -4,9 +4,9 @@
       <button class="button1" @click="navigateTomodal">Add Application</button>
     </div>
     <div class="scrollable-table">
-      <table class="w-full text-sm text-left text-black-300 dark:text-gray-400 shadow-xl">
+      <table class="w-full text-sm text-left text-black-300 dark:text-gray-400 shadow-xl" id="table">
         <thead>
-          <tr>
+          <tr  style="background-color: #e6cfaf;">
             <th>Application No.</th>
             <th>Status</th>
             <th>Tenement Name</th>
@@ -46,6 +46,7 @@
 <script>
 import axios from 'axios';
 import { ref } from 'vue';
+
 import { addDetail, detailToggle, viewDetail, detail_id } from '../dashboards/FTAA-dashboard.vue';
 
 export default {
@@ -92,7 +93,7 @@ export default {
   font-size: 20px;
   border-radius: 5px;
   border: none;
-  background-color: #42b983;
+  background-color: #eacda3;
   color: white;
   cursor: pointer;
 }
@@ -105,9 +106,9 @@ export default {
   width: 100%;
 }
 
-.table {
+#table {
   width: 100%;
-  margin: auto;
+  margin: auto; 
 }
 
 .scrollable-table {
@@ -116,6 +117,7 @@ export default {
   overflow-y: auto;
   /* Add vertical scrollbar if needed */
   margin: 15px;
+  box-shadow: 2px 3px 5px rgb(175, 175, 175)
 }
 
 th,

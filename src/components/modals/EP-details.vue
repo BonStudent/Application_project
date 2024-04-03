@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import { viewDetail1 } from '../dashboards/EP-dasboard.vue';
+import { viewDetail1 } from '/Users/PC8/Application_project/src/views/dashboards/EP-dasboard.vue';
 import axios from 'axios';
 
 export default { 
@@ -94,7 +94,7 @@ export default {
     margin-bottom: 10px;
 }
 .appdetails {
-  background-color: #a9dbc5;
+  background-color: #ffd498;
   display: flex;
   flex-direction: column;
   border-radius: 25px;

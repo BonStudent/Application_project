@@ -35,11 +35,11 @@
   </template>
   
   <script setup>
-  import appdet from '../popups/EP-add.vue'
-  import viewdetail1 from '../popups/EP-details.vue'
-  import qwe from '../header.vue';
-  import Pie from '../charts/Pie.vue'
-  import BarChart from '../charts/bar.vue'
+  import appdet from "/Users/PC8/Application_project/src/components/modals/EP-add.vue"
+  import viewdetail1 from '/Users/PC8/Application_project/src/components/modals/EP-details.vue'
+  import qwe from '/Users/PC8/Application_project/src/components/header.vue';
+  import Pie from '/Users/PC8/Application_project/src/components/charts/Pie.vue'
+  import BarChart from '/Users/PC8/Application_project/src/components/charts/bar.vue'
   import Tableview from '../tables/EP-table.vue'
   import axios from 'axios';
   
@@ -77,7 +77,7 @@
     flex-direction: column;
     align-items: center;
     height: auto;
-    margin-top: 5%;
+    margin-top: 6%;
     position: fixed;
     top: 0;
     left: 0;

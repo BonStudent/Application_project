@@ -35,11 +35,11 @@
 </template>
 
 <script setup>
-import appdet from '../popups/FTTA-add.vue'
-import viewdetail from '../popups/FTTA-details.vue'
-import qwe from '../header.vue';
-import Pie from '../charts/Pie.vue'
-import BarChart from '../charts/bar.vue'
+import appdet from '/Users/PC8/Application_project/src/components/modals/FTTA-add.vue'
+import viewdetail from '/Users/PC8/Application_project/src/components/modals/FTTA-details.vue'
+import qwe from '/Users/PC8/Application_project/src/components/header.vue';
+import Pie from '/Users/PC8/Application_project/src/components/charts/Pie.vue'
+import BarChart from '/Users/PC8/Application_project/src/components/charts/bar.vue'
 import Tableview from '../tables/FTTA-table.vue'
 import axios from 'axios';
 
@@ -77,7 +77,7 @@ export { addDetail, detailToggle, viewDetail, viewToggle, detail_id }
   flex-direction: column;
   align-items: center;
   height: auto;
-  margin-top: 5%;
+  margin-top: 6%;
   position: fixed;
   top: 0;
   left: 0;

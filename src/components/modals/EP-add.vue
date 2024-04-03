@@ -4,7 +4,7 @@
         <div class="appdetails">
           <div style="display: flex; justify-content: flex-end;">
             <button
-              style="border: 1px solid black; color: black; width: 45px; border-radius: 5px; background-color: #fca5a5; position: absolute;"
+              style=" color: black; width: 45px; color: #BB080A; position: absolute;font-size: 25px; font-weight: 700;margin-top: -12px;"
               @click="Exit">
               X
             </button>
@@ -59,7 +59,7 @@
   </script>
   
   <script>
-  import { addDetail1 } from '../dashboards/EP-dasboard.vue';
+  import { addDetail1 } from '/Users/PC8/Application_project/src/views/dashboards/EP-dasboard.vue';
   
   
   export default {
@@ -135,7 +135,7 @@
   
   
   .appdetails {
-    background-color: #42b983;
+    background-color: #e0b983;
     display: flex;
     flex-direction: column;
     border-radius: 25px;
@@ -200,6 +200,10 @@
     height: 50px;
     font-size: 23px;
   }
+
+  .butons:hover{
+    background-color: #ececec;
+  }
   
   .inputall {
     display: flex;
@@ -211,6 +215,10 @@
     padding-left: 4px;
     margin-top: 20px;
     font-weight: 20;
+  }
+
+  .inputall::placeholder{
+    color: black;
   }
   
   .cate::placeholder {

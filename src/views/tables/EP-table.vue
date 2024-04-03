@@ -6,7 +6,7 @@
       <div class="scrollable-table">
         <table class="w-full text-sm text-left text-black-300 dark:text-gray-400 shadow-xl">
           <thead>
-            <tr>
+            <tr style="background-color: #e6cfaf;">
               <th>Application No.</th>
               <th>Status</th>
               <th>Tenement Name</th>
@@ -22,7 +22,7 @@
   
           <tbody>
             <tr v-for="(detail, index) in details" :key="index">
-              <!-- <td>{{ detail.id }}</td>
+              <td>{{ detail.id }}</td>
               <td>{{ detail.status }}</td>
               <td>{{ detail.tenement_name }}</td>
               <td>{{ detail.area_hectares }}</td>
@@ -30,7 +30,8 @@
               <td>{{ detail.barangay }}</td>
               <td>{{ detail.city }}</td>
               <td>{{ detail.province }}</td>
-              <td>{{ detail.commodity }}</td> -->
+              <td>{{ detail.commodity }}</td>
+              <!-- <td></td>
               <td></td>
               <td></td>
               <td></td>
@@ -38,10 +39,9 @@
               <td></td>
               <td></td>
               <td></td>
-              <td></td>
-              <td></td>
+              <td></td> -->
               <td>
-                <button class="text-red-500" @click="navigateTomodalView(detail.id)">
+                <button class="text-red-500" @click="navigateTomodalView()">
                   View
                 </button>
               </td>
@@ -101,9 +101,13 @@
     font-size: 20px;
     border-radius: 5px;
     border: none;
-    background-color: #42b983;
-    color: white;
+    background-color: #eacda3;
+    color: rgb(44, 44, 44);
     cursor: pointer;
+  }
+
+  .button1:hover{
+    background-color: bisque;
   }
   
   .tablemain {

@@ -52,7 +52,7 @@
                 </form>
                 <div class="third">
                     <button class="buttonlogin" :disabled="submitting" @click="handleLogin">Login</button>
-                    <p style="color: blue; text-decoration: underline; cursor: pointer; margin-top: 15px;">Forgot
+                    <p style="color: #0099e6; text-decoration: underline; cursor: pointer; margin-top: 15px;">Forgot
                         Password?</p>
                     <p style="color:black; cursor: pointer;" @click="redirectToUrl">Don't have an account yet?</p>
                 </div>
@@ -63,7 +63,7 @@
 </template>
 
 <script setup>
-import taas from './header.vue'
+import taas from '../components/header.vue'
 import mgb from '../assets/mgb.png'
 import { ref } from 'vue';
 import axios from 'axios';
@@ -160,7 +160,7 @@ const handleLogin = async () => {
     width: 500px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
-    background-color: #fcf1ed;
+    background-color: #eacda3;
     margin-left: -70px;
     height: 450px;
 
@@ -183,7 +183,7 @@ const handleLogin = async () => {
 }
 
 .buttonlogin {
-    background-color: #c2410c;
+    background-color:#e09a38;
     color: white;
     padding-left: 50px;
     padding-right: 50px;
